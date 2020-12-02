@@ -15,6 +15,7 @@
         "ecmaVersion": 11
     },
     "rules": {
-        "prettier/prettier": "error"
+        "prettier/prettier": "error",
+        "endOfLine":"auto"
     }
 }
