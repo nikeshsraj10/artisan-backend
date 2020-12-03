@@ -3,11 +3,6 @@ const Schema = mongoose.Schema
 const Review = require('./Review').Review
 
 const ProductSchema = new Schema({
-    productID:{
-        type: String,
-        required: true,
-        unique: true
-    },
     prodcutName: {
         type: String,
         required: true

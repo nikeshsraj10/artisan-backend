@@ -30,9 +30,11 @@ router.get('/:productId', async (req, res) => {
 
 router.post('/create', async (req, res) => {
     try{
-        console.log(req.body)
+        console.log(`Request Body ${JSON.stringify(req.body)}`)
+        const result = await ProductController.addProduct(req.body)
+        return res.status(200).json(result)  
     }catch(err){
-        console.err(err)
+        console.error(err)
         return res.status(500).json(err)
     }
 })

@@ -14,6 +14,10 @@ class Product {
             throw new Error('Product Id cannot be null')
         return ProductService.getProductById(params.productId)
     }
+
+    static async addProduct(product){
+        return ProductService.addProduct(product)
+    }
 }
 
 module.exports = {

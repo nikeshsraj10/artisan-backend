@@ -7,7 +7,11 @@ class ProductService{
     }
 
     static getProductById(productId){
-        return Product.findById({product: productId})
+        return Product.find({_id: productId})
+    }
+
+    static addProduct(product){
+        return Product.create(product)
     }
 }
 
