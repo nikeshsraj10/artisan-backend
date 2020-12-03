@@ -5,7 +5,7 @@ class Product {
         try{
             return ProductService.getProducts()
         }catch(err){
-            throw new Error(err)
+            throw err
         }
     }
 

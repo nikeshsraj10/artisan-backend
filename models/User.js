@@ -16,12 +16,17 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    mobile:{
+    password: {
+        type: String,
+        required: true
+    },
+    mobile: {
         type: Array,
+        maxlength: 12
     },
     address:{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'Address'
     },
     createdAt:{
         type: Date,
