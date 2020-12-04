@@ -3,39 +3,14 @@ const ProductController = require('../../controllers/Product').ProductController
 
 // @desc get all products
 // @route GET 
-router.get('/', async (req, res) => {
-    try{
-        /* @TODO: Get products here */
-        const products = await ProductController.getProducts(req.params)
-        return res.status(200).json(products)    
-    }catch(err){
-        console.error(err);
-        return res.status(500).json(err)
-    }
-})
+router.get('/', ProductController.getProducts)
 
-router.get('/:productId', async (req, res) => {
-    try{
-        /* @TODO: Get products here */
-        const product = await ProductController.getProductById(req.params)
-        return res.status(200).json(product)    
-    }catch(err){
-        console.error(err);
-        return res.status(500).json(err)
-    }
-})
+// @desc Get Product given productId
+// @route GET /:productId
+router.get('/:productId', ProductController.getProductById)
 
 // @desc Create the product
 // @route POST /create
-
-router.post('/create', async (req, res) => {
-    try{
-        const result = await ProductController.addProduct(req.body)
-        return res.status(200).json(result)  
-    }catch(err){
-        console.error(err)
-        return res.status(500).json(err)
-    }
-})
+router.post('/create', ProductController.addProduct)
 
 module.exports = router

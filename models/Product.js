@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 const Review = require('./Review').Review
 
 const ProductSchema = new Schema({
-    prodcutName: {
+    productName: {
         type: String,
         required: true
     },

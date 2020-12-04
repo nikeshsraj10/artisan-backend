@@ -7,7 +7,7 @@ class UserService{
     }
 
     static async getUserById(userId){
-        const user = await User.find({_id: userId}).exclude('password')      
+        const user = await User.find({_id: userId}).select('-password')      
         return user 
     }
 
