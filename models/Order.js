@@ -3,16 +3,18 @@ const Schema = mongoose.Schema
 const ProductOrder = require('./ProductOrder').ProductOrder
 
 const OrderSchema = new Schema({
-    orderID:{
-        type: String,
-        required: true,
-        unique: true
-    },
-    product: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'ProductOrder',
+    orderedProduct: [{
+        type: Object,
+        product: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Product',
+        },
+        quantity: {
+            type: Number,
+            default: 1
+        },
         required: true
-    },
+    }],
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',

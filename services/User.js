@@ -7,8 +7,7 @@ class UserService{
     }
 
     static async getUserById(userId){
-        const user = await User.find({_id: userId})
-        delete user['password']       
+        const user = await User.find({_id: userId}).exclude('password')      
         return user 
     }
 
